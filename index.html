@@ -1,0 +1,569 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Karren D. Yang</title>
+  
+  <meta name="author" content="Karren Yang">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Karren D. Yang</name>
+              </p>
+              <p>I am a final year Ph.D. student at the <a href="https://lids.mit.edu/">Laboratory for Information & Decision Systems</a> at <a href="https://www.mit.edu/">MIT</a> working with <a href="https://www.carolineuhler.com/">Caroline Uhler</a>.
+              </p>
+              <p> 
+My current research focuses on multimodal learning and machine learning, with applications to computer vision, audio/speech processing, and bioinformatics. 
+</p>
+<p>
+Over the course of my Ph.D., I've interned at <a href="https://machinelearning.apple.com/">Apple</a>, <a href="https://research.nianticlabs.com/">Niantic Labs</a>, <a href="https://about.facebook.com/realitylabs/">Meta Reality Labs</a>, <a href="https://www.bosch-ai.com/">Bosch Center for AI</a>, and <a href="https://research.adobe.com/">Adobe Research</a>.
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:karren@mit.edu">Email</a> &nbsp/&nbsp
+                <a href="data/CV.pdf">CV</a> &nbsp/&nbsp
+                <a href="https://scholar.google.com/citations?user=I80m5QEAAAAJ">Google Scholar</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="images/KarrenYang.jpg"><img style="width:70%;max-width:70%" alt="profile photo" src="images/KarrenYang.jpg" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Publications</heading>
+              <br>
+            Research Topics: <small><small>
+             <a href="" onclick="show_selected('show_by_date'); return false;">all</a> /
+            <a href="" onclick="show_selected('multimodal_learning'); return false;">multimodal learning</a> /
+            <a href="" onclick="show_selected('audio_visual_learning'); return false;">audio-visual learning</a> /
+            <a href="" onclick="show_selected('comp_biology'); return false;">computational biology</a> /
+            <a href="" onclick="show_selected('generative_modeling'); return false;">generative_modeling</a> /
+            <a href="" onclick="show_selected('optimal_transport'); return false;">optimal transport</a> /
+            <a href="" onclick="show_selected('causal_inference'); return false;">causal inference</a>
+            </small></small>
+            </td>
+          </tr>
+        </tbody></table>
+
+  <style>
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+        <style>
+
+        .research-table {
+          overflow: hidden;
+        }
+                /* image style format*/  
+                .research-table img {
+                  display: block;
+                  max-width: 100%;
+                  height: auto;
+                  margin: 0 auto;  /*center align*/
+                  /* margin-left: auto; */ /*right align*/
+                }
+
+                @media (max-width: 500px) {
+               .research-table tr {
+                  display: flex;
+                  flex-direction: column;
+                  width: calc(100vw - 16px);
+                  min-width: 100%;
+                  flex-grow: 1;
+                  height: 100%;
+                  overflow: hidden;
+                  padding-bottom: 20px;
+                  margin-bottom: 20px;
+                  border-bottom: 1px solid #e1e1e1;
+                 }
+
+                 .research-table td {
+                   width: 100% !important;
+                   padding: 5px !important;
+                 }
+               }
+        </style>
+      <script type="text/javascript">
+      const BlockToggler = function() {
+        let activeBlock = null
+        function toggleblock(selector) {
+          console.log('toggleblock', selector)
+          if (activeBlock) {
+            document.getElementById(activeBlock).style.display = 'none'
+          }
+          activeBlock = selector
+          document.getElementById(selector).style.display = 'block'
+        }
+
+
+        return {
+          toggleblock
+        }
+      }
+
+      let activeBlock = null
+      function toggleblock(selector) {
+        console.log('toggleblock', selector)
+        if (activeBlock) {
+          document.getElementById(activeBlock).style.display = 'none'
+        }
+        document.getElementById(selector).style.display = selector === activeBlock ? 'none' : 'block'
+        if (activeBlock === selector) {
+          activeBlock = null
+        } else {
+          activeBlock = selector
+        }
+      }
+
+    </script>
+
+    <script>
+    function show_selected(selector) {
+        const research_topics = ["show_by_date", "multimodal_learning", "audio_visual_learning", "comp_biology", "generative_modeling", "optimal_transport", "causal_inference"]
+        for (topic_idx=0; topic_idx<=research_topics.length; topic_idx++){
+            var research_projects = document.getElementsByClassName(research_topics[topic_idx])
+            for (proj_idx=0; proj_idx<research_projects.length; proj_idx++){
+                research_projects[proj_idx].style.display = "none";
+            }
+        }
+        
+        var research_projects = document.getElementsByClassName(selector)
+        for (proj_idx=0; proj_idx<research_projects.length; proj_idx++){
+	    research_projects[proj_idx].style.display = "block";
+        }
+    } 
+    </script>
+
+
+
+          <div class="show_by_date multimodal_learning audio_visual_learning generative_modeling"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/cvpr-2022-avspeech.png"><img src="images/cvpr-2022-avspeech.png"></a>
+            </td>
+
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://arxiv.org/abs/2203.17263">
+                <papertitle>Audio-Visual Speech Codecs: Rethinking Audio-Visual Speech Enhancement by Re-Synthesis</papertitle>
+              </a>
+              <br>
+              <strong>Karren Yang</strong>, Dejan Markovic, Steven Krenn, Vasu Agrawal, Alexander Richard
+              <br>
+              <em>CVPR</em>, 2022 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+              <br>
+              <p> We perform visual speech enhancement by using audio-visual speech cues to generate the codes of a neural speech codec, enabling efficient synthesis of clean, realistic speech from noisy signals.</p>
+		<a href="https://arxiv.org/pdf/2203.17263.pdf">pdf</a> |
+                <a href="javascript:toggleblock('cvpr-2022-avspeech')">abstract</a> | 
+		<a href="https://github.com/facebookresearch/facestar/releases/download/paper_materials/video.mp4">video</a> |
+		<a href="https://github.com/facebookresearch/facestar">dataset</a> 
+               <p align="justify"> <i id="cvpr-2022-avspeech" class="hidden">
+               Since facial actions such as lip movements contain significant information about speech content, it is not surprising that audio-visual speech enhancement methods are more accurate than their audio-only counterparts. Yet, state-of-the-art approaches still struggle to generate clean, realistic speech without noise artifacts and unnatural distortions in challenging acoustic environments. In this paper, we propose a novel audio-visual speech enhancement framework for high-fidelity telecommunications in AR/VR. Our approach leverages audio-visual speech cues to generate the codes of a neural speech codec, enabling efficient synthesis of clean, realistic speech from noisy signals. Given the importance of speaker-specific cues in speech, we focus on developing personalized models that work well for individual speakers. We demonstrate the efficacy of our approach on a new audio-visual speech dataset collected in an unconstrained, large vocabulary setting, as well as existing audio-visual datasets, outperforming speech enhancement baselines on both quantitative metrics and human evaluation studies. Please see the supplemental video for qualitative results.
+               </i></p>
+            </td>
+          </tr> </tbody></table>
+          </div>
+					
+          <div class="show_by_date multimodal_learning audio_visual_learning"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/cvpr-2021-robust.png"><img src="images/cvpr-2021-robust.png"></a>
+            </td>
+
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yang_Defending_Multimodal_Fusion_Models_Against_Single-Source_Adversaries_CVPR_2021_paper.pdf">
+                <papertitle>Defending Multimodal Fusion Models against Single-Source Adversaries</papertitle>
+              </a>
+              <br>
+              <strong>Karren Yang</strong>, Wan-Yi Lin, Manash Barman, Filipe Condessa, Zico Kolter
+              <br>
+              <em>CVPR</em>, 2021
+              <br>
+              <p> We study the robustness of multimodal models on three tasks-- action recognition, object detection, and sentiment analysis-- and develop a robust fusion strategy that protects against worst-case errors caused by a single modality.
+              </p>
+		<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yang_Defending_Multimodal_Fusion_Models_Against_Single-Source_Adversaries_CVPR_2021_paper.pdf">pdf</a> |
+                <a href="javascript:toggleblock('cvpr-2021-robust')">abstract</a> 
+               <p align="justify"> <i id="cvpr-2021-robust" class="hidden">
+               Beyond achieving high performance across many vision tasks, multimodal models are expected to be robust to single-source faults due to the availability of redundant information between modalities. In this paper, we investigate the robustness of multimodal neural networks against worst-case (i.e., adversarial) perturbations on a single modality. We first show that standard multimodal fusion models are vulnerable to single-source adversaries: an attack on any single modality can overcome the correct information from multiple unperturbed modalities and cause the model to fail. This surprising vulnerability holds across diverse multimodal tasks and necessitates a solution.
+Motivated by this finding, we propose an adversarially robust fusion strategy that trains the model to compare information coming from all the input sources, detect inconsistencies in the perturbed modality compared to the other modalities, and only allow information from the unperturbed modalities to pass through. Our approach significantly improves on state-of-the-art methods in single-source robustness, achieving gains of 7.8-25.2% on action recognition, 19.7-48.2% on object detection, and 1.6-6.7% on sentiment analysis, without degrading performance on unperturbed (i.e., clean) data.
+               </i></p>
+            </td>
+          </tr>
+          </tbody>
+          </table></div>
+
+          <div class="show_by_date multimodal_learning comp_biology generative_modeling"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/cvpr-2021-mol2image.png"><img src="images/cvpr-2021-mol2image.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yang_Mol2Image_Improved_Conditional_Flow_Models_for_Molecule_to_Image_Synthesis_CVPR_2021_paper.pdf">
+                <papertitle>Mol2Image: Improved Conditional Flow Models for Molecule-to-Image Synthesis</papertitle>
+              </a>
+              <br>
+              <strong>Karren Yang</strong>, Samuel Goldman, Wengong Jin, Alex Lu, Regina Barzilay, Tommi Jaakkola, Caroline Uhler
+              <br>
+              <em>CVPR</em>, 2021
+              <br>
+              <p> We build a molecule-to-image synthesis model that predicts the biological effects of molecular treatments on cell microscopy images.
+              </p>
+		<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yang_Mol2Image_Improved_Conditional_Flow_Models_for_Molecule_to_Image_Synthesis_CVPR_2021_paper.pdf">pdf</a> |
+                <a href="javascript:toggleblock('cvpr-2021-mol2image')">abstract</a> |  
+                <a href="https://github.com/uhlerlab/mol2image">code</a> 
+               <p align="justify"> <i id="cvpr-2021-mol2image" class="hidden">
+               In this paper, we aim to synthesize cell microscopy images under different molecular interventions, motivated by practical applications to drug development. Building on the recent success of graph neural networks for learning molecular embeddings and flow-based models for image generation, we propose Mol2Image: a flow-based generative model for molecule to cell image synthesis. To generate cell features at different resolutions and scale to high-resolution images, we develop a novel multi-scale flow architecture based on a Haar wavelet image pyramid. To maximize the mutual information between the generated images and the molecular interventions, we devise a training strategy based on contrastive learning. To evaluate our model, we propose a new set of metrics for biological image generation that are robust, interpretable, and relevant to practitioners. We show quantitatively that our method learns a meaningful embedding of the molecular intervention, which is translated into an image representation reflecting the biological effects of the intervention.
+               </i></p>
+            </td>
+          </tr>
+
+          <div class="show_by_date multimodal_learning comp_biology generative_modeling"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/nature-2021-ae.png"><img src="images/nature-2021-ae.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://www.nature.com/articles/s41467-020-20249-2">
+                <papertitle>Multi-domain translation between single-cell imaging and sequencing data using autoencoders</papertitle>
+              </a>
+              <br>
+              <strong>Karren Dai Yang</strong>*, Anastasiya Belyaeva*, Saradha Venkatachalapathy, Karthik Damodaran, Abigail Katcoff, Adityanarayanan Radhakrishnan, G. V. Shivashankar, Caroline Uhler
+              <br>
+              <em>Nature Communications 12, 31</em> (2021)
+              <br>
+              <p> We propose a framework for integrating and translating between different modalities of single-cell biological data by using autoencoders to map to a shared latent space.
+              </p>
+		<a href="https://www.nature.com/articles/s41467-020-20249-2.pdf">pdf</a> |
+                <a href="javascript:toggleblock('nature-2021-ae')">abstract</a> | 
+                <a href="https://github.com/uhlerlab/cross-modal-autoencoders">code</a> 
+               <p align="justify"> <i id="nature-2021-ae" class="hidden">
+              The development of single-cell methods for capturing different data modalities including imaging and sequencing has revolutionized our ability to identify heterogeneous cell states. Different data modalities provide different perspectives on a population of cells, and their integration is critical for studying cellular heterogeneity and its function. While various methods have been proposed to integrate different sequencing data modalities, coupling imaging and sequencing has been an open challenge. We here present an approach for integrating vastly different modalities by learning a probabilistic coupling between the different data modalities using autoencoders to map to a shared latent space. We validate this approach by integrating single-cell RNA-seq and chromatin images to identify distinct subpopulations of human naive CD4+ T-cells that are poised for activation. Collectively, our approach provides a framework to integrate and translate between data modalities that cannot yet be measured within the same cell for diverse applications in biomedical discovery.
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+ 
+          <div class="show_by_date comp_biology"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/nature-2021-covid.png"><img src="images/nature-2021-covid.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://www.nature.com/articles/s41467-021-21056-z">
+                <papertitle>Causal network models of SARS-CoV-2 expression and aging to identify candidates for drug repurposing</papertitle>
+              </a>
+              <br>
+              Anastasiya Belyaeva, Louis Cammarata, Adityanarayanan Radhakrishnan, Chandler Squires, <strong>Karren Yang</strong>, G. V. Shivashankar, Caroline Uhler
+              <br>
+              <em>Nature Communications 12, 1024</em> (2021)
+              <br>
+              <p>
+              We integrate transcriptomic, proteomic, and structural data to identify candidate drugs and targets that affect the SARS-CoV-2 and aging pathways.
+              </p>
+		<a href="https://www.nature.com/articles/s41467-021-21056-z.pdf">pdf</a> |
+                <a href="javascript:toggleblock('nature-2021-covid')">abstract</a>
+               <p align="justify"> <i id="nature-2021-covid" class="hidden">
+               Given the severity of the SARS-CoV-2 pandemic, a major challenge is to rapidly repurpose existing approved drugs for clinical interventions. While a number of data-driven and experimental approaches have been suggested in the context of drug repurposing, a platform that systematically integrates available transcriptomic, proteomic and structural data is missing. More importantly, given that SARS-CoV-2 pathogenicity is highly age-dependent, it is critical to integrate aging signatures into drug discovery platforms. We here take advantage of large-scale transcriptional drug screens combined with RNA-seq data of the lung epithelium with SARS-CoV-2 infection as well as the aging lung. To identify robust druggable protein targets, we propose a principled causal framework that makes use of multiple data modalities. Our analysis highlights the importance of serine/threonine and tyrosine kinases as potential targets that intersect the SARS-CoV-2 and aging pathways. By integrating transcriptomic, proteomic and structural data that is available for many diseases, our drug discovery platform is broadly applicable. Rigorous in vitro experiments as well as clinical trials are needed to validate the identified candidate drugs.
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+
+          <div class="show_by_date multimodal_learning audio_visual_learning"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/cvpr-2020-stereolearning.png"><img src="images/cvpr-2020-stereolearning.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://karreny.github.io/telling-left-from-right/">
+                <papertitle>Telling Left from Right: Learning Spatial Correspondence of Sight and Sound</papertitle>
+              </a>
+              <br>
+              <strong>Karren Yang</strong>, Justin Salamon, Bryan Russell
+              <br>
+              <em>CVPR</em>, 2020 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+              <br>
+              <p> We leverage spatial correspondence between audio and vision in videos for self-supervised representation learning and apply the learned representations to three downstream tasks: sound localization, audio spatialization, and audio-visual sound separation.
+              </p>
+		<a href="https://arxiv.org/pdf/2006.06175.pdf">pdf</a> |
+                <a href="javascript:toggleblock('cvpr-2020-stereolearning')">abstract</a> |  
+                <a href="https://karreny.github.io/telling-left-from-right/">project website</a> | 
+                <a href="https://github.com/karreny/telling-left-from-right/tree/dataset">dataset</a> | 
+                <a href="https://github.com/karreny/telling-left-from-right/tree/upmixing-demo">demo code</a> 
+               <p align="justify"> <i id="cvpr-2020-stereolearning" class="hidden">
+              Self-supervised audio-visual learning aims to capture useful representations of video by leveraging correspondences between visual and audio inputs. Existing approaches have focused primarily on matching semantic information between the sensory streams. We propose a novel self-supervised task to leverage an orthogonal principle: matching spatial information in the audio stream to the positions of sound sources in the visual stream. Our approach is simple yet effective. We train a model to determine whether the left and right audio channels have been flipped, forcing it to reason about spatial localization across the visual and audio streams. To train and evaluate our model, we introduce a large-scale video dataset, YouTube-ASMR-300K, with spatial audio comprising over 900 hours of footage. We demonstrate that understanding spatial correspondence enables models to perform better on three audio-visual tasks, achieving quantitative gains over supervised and self-supervised baselines that do not leverage spatial audio cues. We also show how to extend our self-supervised approach to 360 degree videos with ambisonic audio. 
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+
+          <div class="show_by_date comp_biology multimodal_learning optimal_transport generative_modeling"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/icml-2020-superot.png"><img src="images/icml-2020-superot.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://arxiv.org/abs/2007.12098">
+                <papertitle>Optimal Transport using GANs for Lineage Tracing</papertitle>
+              </a>
+              <br>
+              Neha Prasad, <strong>Karren Yang</strong>, Caroline Uhler
+              <br>
+              <em>ICML Workshop on Computational Biology</em>, 2020 &nbsp <font color="red"><strong>(Oral Spotlight)</strong></font>
+              <br>
+              <p>
+              We propose a novel approach to computational lineage tracing that combines supervised learning with optimal transport based on generative adversarial networks.
+              </p>
+		<a href="https://arxiv.org/pdf/2007.12098.pdf">pdf</a> |
+                <a href="javascript:toggleblock('icml-2020-superot')">abstract</a> |
+                <a href="https://github.com/uhlerlab/superot">code</a>
+               <p align="justify"> <i id="icml-2020-superot" class="hidden">
+                    In this paper, we present Super-OT, a novel approach to computational lineage tracing that combines a supervised learning framework with optimal transport based on Generative Adversarial Networks (GANs). Unlike previous approaches to lineage tracing, Super-OT has the flexibility to integrate paired data. We benchmark Super-OT based on single-cell RNA-seq data against Waddington-OT, a popular approach for lineage tracing that also employs optimal transport. We show that Super-OT achieves gains over Waddington-OT in predicting the class outcome of cells during differentiation, since it allows the integration of additional information during training. 
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+          
+          <div class="show_by_date comp_biology multimodal_learning optimal_transport generative_modeling"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/plos-2020-aeot.png"><img src="images/plos-2020-aeot.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007828">
+                <papertitle>Predicting cell lineages using autoencoders and optimal transport</papertitle>
+              </a>
+              <br>
+              
+    <strong>Karren Yang</strong>, Karthik Damodaran, Saradha Venkatachalapathy, Ali C. Soylemezoglu, G. V. Shivashankar, Caroline Uhler
+              <br>
+              <em>PLOS Computational Biology 16(4): e1007828</em> (2020)
+              <br>
+              <p>
+              We combine autoencoding and optimal transport to align biological imaging datasets collected from different time points.
+              </p>
+		<a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1007828&type=printable">pdf</a> |
+                <a href="javascript:toggleblock('plos-2020-aeot')">abstract</a> |
+                <a href="https://github.com/uhlerlab/imageaeot">code</a>
+               <p align="justify"> <i id="plos-2020-aeot" class="hidden">
+               Lineage tracing involves the identification of all ancestors and descendants of a given cell, and is an important tool for studying biological processes such as development and disease progression. However, in many settings, controlled time-course experiments are not feasible, for example when working with tissue samples from patients. Here we present ImageAEOT, a computational pipeline based on autoencoders and optimal transport for predicting the lineages of cells using time-labeled datasets from different stages of a cellular process. Given a single-cell image from one of the stages, ImageAEOT generates an artificial lineage of this cell based on the population characteristics of the other stages. These lineages can be used to connect subpopulations of cells through the different stages and identify image-based features and biomarkers underlying the biological process. To validate our method, we apply ImageAEOT to a benchmark task based on nuclear and chromatin images during the activation of fibroblasts by tumor cells in engineered 3D tissues. We further validate ImageAEOT on chromatin images of various breast cancer cell lines and human tissue samples, thereby linking alterations in chromatin condensation patterns to different stages of tumor progression. Our results demonstrate the promise of computational methods based on autoencoding and optimal transport principles for lineage tracing in settings where existing experimental strategies cannot be used.
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+          
+          <div class="show_by_date comp_biology multimodal_learning optimal_transport generative_modeling"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/iclr-2019-ubot.png"><img src="images/iclr-2019-ubot.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://arxiv.org/abs/1810.11447">
+                <papertitle>Scalable Unbalanced Optimal Transport using Generative Adversarial Networks</papertitle>
+              </a>
+              <br>
+              <strong>Karren Yang</strong>, Caroline Uhler
+              <br>
+              <em>ICLR</em>, 2019
+              <br>
+              <p> We align and translate between datasets by performing unbalanced optimal transport with generative adversarial networks.
+              </p>
+		<a href="https://arxiv.org/pdf/1810.11447.pdf">pdf</a> |
+                <a href="javascript:toggleblock('iclr-2019-ubot')">abstract</a> | 
+                <a href="https://github.com/uhlerlab/unbalanced_ot">code</a> 
+               <p align="justify"> <i id="iclr-2019-ubot" class="hidden">
+    Generative adversarial networks (GANs) are an expressive class of neural generative models with tremendous success in modeling high-dimensional continuous measures. In this paper, we present a scalable method for unbalanced optimal transport (OT) based on the generative-adversarial framework. We formulate unbalanced OT as a problem of simultaneously learning a transport map and a scaling factor that push a source measure to a target measure in a cost-optimal manner. In addition, we propose an algorithm for solving this problem based on stochastic alternating gradient updates, similar in practice to GANs. We also provide theoretical justification for this formulation, showing that it is closely related to an existing static formulation by Liero et al. (2018), and perform numerical experiments demonstrating how this methodology can be applied to population modeling. 
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+				
+          <div class="show_by_date multimodal_learning comp_biology generative_modeling"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/icml-2019-workshop.png"><img src="images/icml-2019-workshop.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://arxiv.org/pdf/1902.03515">
+                <papertitle>Multi-Domain Translation by Learning Uncoupled Autoencoders</papertitle>
+              </a>
+              <br>
+              <strong>Karren Yang</strong>, Caroline Uhler
+              <br>
+              <em>ICML Workshop on Computational Biology</em>, 2019 &nbsp <font color="red"><strong>(Oral Spotlight)</strong></font>
+              <br>
+              <p> We train domain-specific autoencoders to map different data modalities to the same latent space and translate between them.
+              </p>
+		<a href="https://arxiv.org/pdf/1902.03515.pdf">pdf</a> |
+                <a href="javascript:toggleblock('icml-2019-workshop')">abstract</a> 
+               <p align="justify"> <i id="icml-2019-workshop" class="hidden">
+                Multi-domain translation seeks to learn a probabilistic coupling between marginal distributions that reflects the correspondence between different domains. We assume that data from different domains are generated from a shared latent representation based on a structural equation model. Under this assumption, we show that the problem of computing a probabilistic coupling between marginals is equivalent to learning multiple uncoupled autoencoders that embed to a given shared latent distribution. In addition, we propose a new framework and algorithm for multi-domain translation based on learning the shared latent distribution and training autoencoders under distributional constraints. A key practical advantage of our framework is that new autoencoders (i.e., new domains) can be added sequentially to the model without retraining on the other domains, which we demonstrate experimentally on image as well as genomics datasets. 
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+
+          <div class="show_by_date causal_inference"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/aistats-2019-expdesign.png"><img src="images/aistats-2019-expdesign.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://arxiv.org/abs/1902.10347">
+                <papertitle>ABCD-Strategy: Budgeted Experimental Design for Targeted Causal Structure Discovery</papertitle>
+              </a>
+              <br>
+              Raj Agrawal, Chandler Squires, <strong>Karren Yang</strong>, Karthik Shanmugam, Caroline Uhler
+              <br>
+              <em>AISTATS</em>, 2019
+              <br>
+              <p>
+              We propose an experimental design strategy for target causal discovery.
+              </p>
+		<a href="https://arxiv.org/pdf/1902.10347.pdf">pdf</a> |
+                <a href="javascript:toggleblock('aistats-2019-expdesign')">abstract</a> |
+                <a href="https://github.com/agrawalraj/active_learning">code</a>
+               <p align="justify"> <i id="aistats-2019-expdesign" class="hidden">
+                    Determining the causal structure of a set of variables is critical for both scientific inquiry and decision-making. However, this is often challenging in practice due to limited interventional data. Given that randomized experiments are usually expensive to perform, we propose a general framework and theory based on optimal Bayesian experimental design to select experiments for targeted causal discovery. That is, we assume the experimenter is interested in learning some function of the unknown graph (e.g., all descendants of a target node) subject to design constraints such as limits on the number of samples and rounds of experimentation. While it is in general computationally intractable to select an optimal experimental design strategy, we provide a tractable implementation with provable guarantees on both approximation and optimization quality based on submodularity. We evaluate the efficacy of our proposed method on both synthetic and real datasets, thereby demonstrating that our method realizes considerable performance gains over baseline strategies such as random sampling. 
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+
+          <div class="show_by_date causal_inference"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/icml-2018-causal.png"><img src="images/icml-2018-causal.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://arxiv.org/abs/1802.06310">
+                <papertitle>Characterizing and Learning Equivalence Classes of Causal DAGs under Interventions</papertitle>
+              </a>
+              <br>
+              <strong>Karren Yang</strong>, Abigail Katcoff, Caroline Uhler
+              <br>
+              <em>ICML</em>, 2018 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+              <br>
+              <p> 
+              We characterize interventional Markov equivalence classes of DAGs that can be identified under soft interventions and propose the first provably consistent algorithm for learning DAGs in this setting.
+              </p>
+		<a href="https://arxiv.org/pdf/1802.06310.pdf">pdf</a> |
+                <a href="javascript:toggleblock('icml-2018-causal')">abstract</a>
+               <p align="justify"> <i id="icml-2018-causal" class="hidden">
+               We consider the problem of learning causal DAGs in the setting where both observational and interventional data is available. This setting is common in biology, where gene regulatory networks can be intervened on using chemical reagents or gene deletions. Hauser and Bühlmann (2012) previously characterized the identifiability of causal DAGs under perfect interventions, which eliminate dependencies between targeted variables and their direct causes. In this paper, we extend these identifiability results to general interventions, which may modify the dependencies between targeted variables and their causes without eliminating them. We define and characterize the interventional Markov equivalence class that can be identified from general (not necessarily perfect) intervention experiments. We also propose the first provably consistent algorithm for learning DAGs in this setting and evaluate our algorithm on simulated and biological datasets. 
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+
+          <div class="show_by_date"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/arxiv-2018-memorization.png"><img src="images/arxiv-2018-memorization.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://arxiv.org/abs/1810.10333">
+                <papertitle>Memorization in Overparameterized Autoencoders</papertitle>
+              </a>
+              <br>
+              Adityanarayanan Radhakrishnan, <strong>Karren Yang</strong>, Mikhail Belkin, Caroline Uhler
+              <br>
+              <em>arXiv</em>, 2018
+              <br>
+              <p> We show that overparameterized autoencoders are biased towards learning step function around training examples.
+              </p>
+		<a href="https://arxiv.org/pdf/1810.10333.pdf">pdf</a> |
+                <a href="javascript:toggleblock('arxiv-2018-memorization')">abstract</a> 
+               <p align="justify"> <i id="arxiv-2018-memorization" class="hidden">
+                The ability of deep neural networks to generalize well in the overparameterized regime has become a subject of significant research interest. We show that overparameterized autoencoders exhibit memorization, a form of inductive bias that constrains the functions learned through the optimization process to concentrate around the training examples, although the network could in principle represent a much larger function class. In particular, we prove that single-layer fully-connected autoencoders project data onto the (nonlinear) span of the training examples. In addition, we show that deep fully-connected autoencoders learn a map that is locally contractive at the training examples, and hence iterating the autoencoder results in convergence to the training examples. Finally, we prove that depth is necessary and provide empirical evidence that it is also sufficient for memorization in convolutional autoencoders. Understanding this inductive bias may shed light on the generalization properties of overparametrized deep neural networks that are currently unexplained by classical statistical theory. 
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>
+ 
+        <div class="show_by_date causal_inference"> 
+        <table class="research-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+             <a href="images/neurips-2017-causal.png"><img src="images/neurips-2017-causal.png"></a>
+            </td>
+            <td style="padding:20px;width:65%;vertical-align:middle">
+							<a href="https://arxiv.org/abs/1705.10220">
+                <papertitle>Permutation-based Causal Inference Algorithms with Interventions</papertitle>
+              </a>
+              <br>
+              Yuhao Wang, Liam Solus, <strong>Karren Yang</strong>, Caroline Uhler
+              <br>
+              <em>NeurIPS</em>, 2017 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+              <br>
+              <p>
+              We present two provably consistent algorithms for learning DAGs from observational and (hard) interventional data.
+              </p>
+		<a href="https://arxiv.org/pdf/1705.10220.pdf">pdf</a> |
+                <a href="javascript:toggleblock('neurips-2017-causal')">abstract</a>
+               <p align="justify"> <i id="neurips-2017-causal" class="hidden">
+                    Learning directed acyclic graphs using both observational and interventional data is now a fundamentally important problem due to recent technological developments in genomics that generate such single-cell gene expression data at a very large scale. In order to utilize this data for learning gene regulatory networks, efficient and reliable causal inference algorithms are needed that can make use of both observational and interventional data. In this paper, we present two algorithms of this type and prove that both are consistent under the faithfulness assumption. These algorithms are interventional adaptations of the Greedy SP algorithm and are the first algorithms using both observational and interventional data with consistency guarantees. Moreover, these algorithms have the advantage that they are nonparametric, which makes them useful also for analyzing non-Gaussian data. In this paper, we present these two algorithms and their consistency guarantees, and we analyze their performance on simulated data, protein signaling data, and single-cell gene expression data. 
+              </i></p>
+            </td>
+          </tr>
+        </tbody></table>
+          </div>          
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+                Modified version of template from <a style="font-size:small;" href="https://jonbarron.info/">here</a> and <a href="https://asaran.github.io/">here</a>.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
+
+<script>show_selected("show_by_date");</script>
+</body>
+
+</html>
